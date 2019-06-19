@@ -2,7 +2,7 @@
 pyenv versions | grep 2.7.2
 if [ $? -ne 0 ];
 then
-pyenv install 2.7.2cd
+pyenv install 2.7.2
 else
 echo "!!! 2.7.2 was installed before !!!"
 fi
