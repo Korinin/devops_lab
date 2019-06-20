@@ -6,17 +6,18 @@ if '=' in mystring and ((re.search("[a-zA-Z]+", mystring)) == None):
 else:
     print('error')
 
-if '+' in mystring: 
+if '+' in mystring:
     operator = '+'
-elif '-' in mystring: 
+elif '-' in mystring:
     operator = '-'
-elif '*' in mystring: 
+elif '*' in mystring:
     operator = '*'
-elif '/' in mystring: 
+elif '/' in mystring:
     operator = '/'
-else:    print('error')
+else:
+    print('error')
 
-part1, part2 =part1.split(operator)
+part1, part2 = part1.split(operator)
 
 if part1.isdigit() and part2.isdigit() and part3.isdigit():
     a = int(part1)
