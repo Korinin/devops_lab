@@ -1,7 +1,7 @@
 import re
 mystring = input("input a string :")
 # check for letters and avalibility " = "
-if '=' in mystring and ((re.search("[a-zA-Z]+", mystring)) == None):
+if '=' in mystring and ((re.search("[a-zA-Z]+", mystring)) is None):
     part1, part3 = mystring.split('=')
 else:
     print('error')
