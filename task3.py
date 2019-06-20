@@ -16,7 +16,7 @@ while shifting != 1:
         exit(0)
     shifting /= c
 
-out.reverse();
+out.reverse()
 out2 = []
 
 i = 0
@@ -32,7 +32,3 @@ out2.append(out[-1])
 out2.sort()
 for i in out2:
     print(i, end='')
-
-
-
-
