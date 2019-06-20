@@ -1,26 +1,38 @@
-print("Type any value")
-myvalue = int(input())
+number = int(input("Input: "))
 
-reslist = []
-#i = 9
+shifting = number
+out = []
+numbers = set(range(2, 10))
 
-if myvalue == 1:
-    print("Result =", 1)
-
-elif myvalue == 0:
-    print("Result =", 0)
-
-else:
-    for i in range (9,2,-1):
-        if myvalue % i == 0:
-            myvalue /= i
-            reslist.extend([i])
-    if myvalue > 9:
-        print("nothing")
+c = 1
+while shifting != 1:
+    for i in numbers:
+        if shifting % i == 0:
+            c = i
+            out.append(c)
+            break
     else:
-        #float(round(myvalue))
-        reslist.extend([myvalue])
-        reslist.sort()
-        print(reslist)
+        print("-1")
+        exit(0)
+    shifting /= c
+
+out.reverse();
+out2 = []
+
+i = 0
+while i < (len(out) - 1):
+    if (out[i] * out[i + 1]) > 9:
+        out2.append(out[i])
+        i += 1
+    else:
+        out[i] = out[i] * out[i + 1]
+        del out[i + 1]
+
+out2.append(out[-1])
+out2.sort()
+for i in out2:
+    print(i, end='')
+
+
 
 
