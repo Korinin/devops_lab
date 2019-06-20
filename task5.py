@@ -8,5 +8,3 @@ for i in list(bin1)[2:]:
         rList.append('0')
 r = ''.join(rList)
 print("Output:", int(r, 2))
-
-
