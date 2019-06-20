@@ -9,3 +9,4 @@ for i in list(bin1)[2:]:
 r = ''.join(rList)
 print("Output:", int(r, 2))
 
+
