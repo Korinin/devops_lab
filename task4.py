@@ -1,10 +1,8 @@
-#task2.4
 from collections import defaultdict
 
 n, m = map(int, input().split(' '))
 
-#input1 = ['a', 'a', 'b', 'a', 'b']
-#input2 = ['a', 'b']
+
 input1 = list()
 for i in range(n):
     input1.append(input())
@@ -16,7 +14,7 @@ for i in range(m):
 d = defaultdict(list)
 
 for i in range(n):
-    d[input1[i]].append(i+1)
+    d[input1[i]].append(i + 1)
 
 for i in input2:
     if i in d:
