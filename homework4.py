@@ -15,7 +15,7 @@ args = parser.parse_args()
 if args.field[0]:
 
     b = requests.get('https://api.github.com/repos/' + args.user[0] + '/' + args.repo[0] + '/pulls',
-                     auth = ('woraccmsq', token))
+                     auth=('woraccmsq', token))
     print(b.json()[0][args.field[0]])
 
 else:
