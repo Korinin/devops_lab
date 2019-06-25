@@ -13,8 +13,7 @@ virtual_environment = os.popen('pyenv version').read()
 # 3.
 python_executable_location = sys.executable
 # 4.
-pip_location = subprocess.check_output(
-        ['which', 'pip'], universal_newlines=True).split('\n')[0]
+pip_location = subprocess.check_output(['which', 'pip'], universal_newlines=True).split('\n')[0]
 # 5.
 pythonpath = sys.path
 # 6.
