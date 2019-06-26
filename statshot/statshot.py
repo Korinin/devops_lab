@@ -29,18 +29,18 @@ def main():
     tm = MinLen()
     print('LOADED SUCCESSFUL!!!')
 
-#   start = time.time()
+    #   start = time.time()
     while True:
         n += 1
-#       now = datetime.now()  # current date and time
+        #       now = datetime.now()  # current date and time
         time_stmp = datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S")
-        cpu = psutil.cpu_percent(interval=1)
+        cpu = psutil.cpu_percent(interval = 1)
         d_mem = psutil.disk_usage('/')
         v_mem = psutil.virtual_memory().percent
         io = psutil.Process().io_counters()
-        net = psutil.net_io_counters(pernic=True)
+        net = psutil.net_io_counters(pernic = True)
         if loadfile['output'] == 'plane':
-# pathdata = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data.txt')
+            # pathdata = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data.txt')
             f = open('data.txt', 'a+')
             f.write('\n' + "SNAPSHOT " + str(n) + ": " + str(time_stmp) + ': ')
             f.write(' CpuLoad: ' + str(cpu))
