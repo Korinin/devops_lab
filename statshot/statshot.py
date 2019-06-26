@@ -40,8 +40,8 @@ def main():
         io = psutil.Process().io_counters()
         net = psutil.net_io_counters(pernic=True)
         if loadfile['output'] == 'plane':
-            pathdata = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data.txt')
-            f = open(pathdata, 'a+')
+# pathdata = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data.txt')
+            f = open('data.txt', 'a+')
             f.write('\n' + "SNAPSHOT " + str(n) + ": " + str(time_stmp) + ': ')
             f.write(' CpuLoad: ' + str(cpu))
             f.write(' DiskUse: ' + str(d_mem))
@@ -61,9 +61,7 @@ def main():
             })
             pathjson = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data.json')
             with open(pathjson, 'a+') as outfile:
-                json.dump(data, outfile)
-                f = open(pathjson, 'a+')
-                f.write('\n')
+                outfile.write(json.dumps(data) + '\n')
         else:
             print('Write plane or json')
         time.sleep(tm.func(interv))
