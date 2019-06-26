@@ -41,13 +41,13 @@ def main():
         net = psutil.net_io_counters(pernic=True)
         if loadfile['output'] == 'plane':
             # pathdata = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data.txt')
-            f = open('data.txt', 'a+')
-            f.write('\n' + "SNAPSHOT " + str(n) + ": " + str(time_stmp) + ': ')
-            f.write(' CpuLoad: ' + str(cpu))
-            f.write(' DiskUse: ' + str(d_mem))
-            f.write(' MemUse: ' + str(v_mem))
-            f.write(' IO: ' + str(io))
-            f.write(' Network: ' + str(net))
+            with open('data.txt', 'a+') as f:
+                f.write('\n' + "SNAPSHOT " + str(n) + ": " + str(time_stmp) + ': ')
+                f.write(' CpuLoad: ' + str(cpu))
+                f.write(' DiskUse: ' + str(d_mem))
+                f.write(' MemUse: ' + str(v_mem))
+                f.write(' IO: ' + str(io))
+                f.write(' Network: ' + str(net))
         elif loadfile['output'] == 'json':
             data = {}
             data['SNAPSHOT ' + str(n)] = []
@@ -59,8 +59,8 @@ def main():
                 'IO': io,
                 'Network': net
             })
-            pathjson = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data.json')
-            with open(pathjson, 'a+') as outfile:
+        # pathjson = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data.json')
+            with open('data.json', 'a+') as outfile:
                 outfile.write(json.dumps(data) + '\n')
         else:
             print('Write plane or json')
