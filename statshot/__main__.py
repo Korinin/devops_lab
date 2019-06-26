@@ -1,3 +1,3 @@
-from statshot import main
+from statshot.statshot import main
 
 main()
