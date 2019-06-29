@@ -7,8 +7,7 @@ version = "1.0"
 parser = argparse.ArgumentParser()
 parser.add_argument('-user', nargs=1, help="write github username", required=True)
 parser.add_argument('-repo', nargs=1, help="write name of repo", required=True)
-parser.add_argument('-field', nargs=1, help="write argument likes id, title,
-                    html_url etc...", required=True)
+parser.add_argument('-field', nargs=1, help="write argument likes id, title etc...", required=True)
 parser.add_argument('-token', nargs=1, help="write name of repo", required=True)
 parser.add_argument('-login', help="write flag for show login", action='store_true')
 parser.add_argument('-ref', help="write flag for show name of pull", action='store_true')
